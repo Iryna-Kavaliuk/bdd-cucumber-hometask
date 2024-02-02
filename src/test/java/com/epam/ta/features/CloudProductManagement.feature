@@ -1,5 +1,6 @@
 Feature: Cloud Product Management
 
+  @RegularTest
   Scenario: Add a program
     Given I open cloud product calculator
     And I select "Compute Engine" program

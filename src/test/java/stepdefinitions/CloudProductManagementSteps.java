@@ -5,19 +5,21 @@ import com.epam.ta.page.GoogleCloudPricingCalculatorPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
+import static com.epam.ta.driver.DriverSingleton.getDriver;
 import static stepdefinitions.SearchCloudProductCalculatorPageSteps.RESULTING_TERM;
 import static stepdefinitions.SearchCloudProductCalculatorPageSteps.SEARCH_TERM;
 
-public class CloudProductManagementSteps extends CommonSteps {
+public class CloudProductManagementSteps {
 
   private GoogleCloudHomePage homePage;
   private GoogleCloudPricingCalculatorPage calculatorPage;
 
   @Given("I open cloud product calculator")
     public void i_open_cloud_product_calculator() {
-      homePage = new GoogleCloudHomePage(driver);
+      homePage = new GoogleCloudHomePage(getDriver());
       homePage.openPage();
       homePage.enterSearchTerm(SEARCH_TERM);
       String targetLink = homePage.findTargetingLinkInSearchResults(RESULTING_TERM);

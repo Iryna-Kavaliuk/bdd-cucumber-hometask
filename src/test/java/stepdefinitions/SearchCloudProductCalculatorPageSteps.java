@@ -1,12 +1,14 @@
 package stepdefinitions;
 
+import com.epam.ta.driver.DriverSingleton;
 import com.epam.ta.page.GoogleCloudHomePage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebDriver;
 
-public class SearchCloudProductCalculatorPageSteps extends CommonSteps {
-
+public class SearchCloudProductCalculatorPageSteps { //extends CommonSteps {
+  protected WebDriver driver;
   protected GoogleCloudHomePage homePage;
 
   protected static final String SEARCH_TERM = "Google Cloud Platform Pricing Calculator";
@@ -14,6 +16,7 @@ public class SearchCloudProductCalculatorPageSteps extends CommonSteps {
 
   @Given("I open cloud product home page")
   public void i_open_cloud_product_home_page() {
+    driver = DriverSingleton.getDriver();
     homePage = new GoogleCloudHomePage(driver);
     homePage.openPage();
   }
