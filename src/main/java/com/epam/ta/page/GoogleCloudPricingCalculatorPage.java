@@ -191,13 +191,15 @@ public class GoogleCloudPricingCalculatorPage extends AbstractPage implements Lo
     clickToElement(addToEstimateButton);
   }
 
-  public String getEstimationResult() {
+  public double getEstimationResult() {
     currentElement = driver.findElement(estimationResultContent);
     scrollToElement(estimationResultContent);
     highLightElement(currentElement);
     String estimation = currentElement.getText();
-    logger.info("Estimation is test product is calculated:" + estimation);
-    return estimation;
+    String asd[] = estimation.split(" ");
+    double estimationValue = Double.parseDouble(asd[0].replace(",", ""));
+    logger.info("Estimation is test product is calculated:" + estimationValue);
+    return estimationValue;
   }
 
 }

@@ -20,4 +20,5 @@ And I click "Estimate" button
 Then Estimated price is <EstimatedAmount>
 Examples:
 |OperatingSystem     |ProvisioningModel|NumberOfInstances|Series|MachineType  |GpuType        |NumberOfGpu|LocalSsd|DatacenterLocation      |CommittedUsage|EstimatedAmount|
-|Free: Debian, CentOS|Regular          |4                |N1    |n1-standard-8|NVIDIA Tesla T4|1          |2x375 GB|Frankfurt (europe-west3)|1 Year        |1,840.40 / mo  |
+|Free: Debian, CentOS|Regular          |4                |N1    |n1-standard-8|NVIDIA Tesla T4|1          |2x375 GB|Frankfurt (europe-west3)|1 Year        |1840.40 / mo  |
+|Free: Debian, CentOS|Regular          |4                |N1    |n1-standard-8|NVIDIA Tesla T4|2          |2x375 GB|Frankfurt (europe-west3)|1 Year        |2914.96 / mo  |

@@ -84,8 +84,9 @@ public class CloudProductManagementSteps {
   }
 
   @Then("Estimated price is {double} \\/ mo")
-  public void estimated_price_is_mo(Double double1) {
-    Assert.assertEquals(calculatorPage.getEstimationResult(), testProduct.calculateProductPrice(),
+  public void estimated_price_is(double estimatedPrice) throws InterruptedException {
+    Thread.sleep(10000);
+    Assert.assertEquals(calculatorPage.getEstimationResult(), estimatedPrice,
         "Estimations got manually and automatically are different!");
   }
 }
